@@ -5,6 +5,9 @@ Inspired by https://github.com/readme/guides/private-documentation and https://g
 
 ---
 
+## Git
+- [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
+
 ## Python
 - [Run a simple Python web server](python/http-server.md)
 
