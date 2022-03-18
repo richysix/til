@@ -5,5 +5,8 @@ Inspired by https://github.com/readme/guides/private-documentation and https://g
 
 ---
 
+## Python
+- [Run a simple Python web server](python/http-server.md)
+
 ## Vagrant
 - [Teardown a Vagrant Environment](vagrant/teardown.md)
