@@ -5,6 +5,9 @@ Inspired by https://github.com/readme/guides/private-documentation and https://g
 
 ---
 
+## Commmand Line
+- [Start ssh-agent](command_line/start-ssh-agent.md)
+
 ## Git
 - [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
 
