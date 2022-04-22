@@ -1,0 +1,47 @@
+---
+title: "Create a Stacked Bar Chart of Proportion"
+author: "Richard White"
+date: "22/04/2022"
+output:
+  md_document:
+    variant: markdown_github
+---
+
+```{r packages, include=FALSE, message=FALSE}
+for( package in c("knitr")) {
+  library(package, character.only = TRUE)
+}
+```
+
+```{r knitr_options, include=TRUE, message=FALSE, echo=FALSE}
+opts_chunk$set(fig.width=6, fig.height=4, include=TRUE, echo=TRUE)
+```
+
+```{r load_packages}
+library(ggplot2)
+library(palmerpenguins)
+```
+
+Normally `geom_bar` plots the numbers of cases a each `x` position.
+```{r default_bar}
+ggplot(penguins, aes(x = species)) + geom_bar()
+```
+
+Adding a `fill` or `colour` aesthetic creates a stacked bar chart.
+```{r stacked_bar}
+ggplot(na.omit(penguins), aes(x = species, fill = sex)) + geom_bar()
+```
+
+To change it from number of cases to proportion of cases in the group, add `position = "fill"` to `geom_bar`.
+```{r stacked_prop_bar}
+ggplot(na.omit(penguins), aes(x = species, fill = sex)) + 
+  geom_bar(position = "fill")
+```
+
+The same thing can be achieved using the `position_fill()` function. This can be useful for reversing the order of stacking, so that the legend matches the bars.
+```{r flipped_stacked_prop_bar}
+ggplot(na.omit(penguins), aes(x = species, fill = sex)) + 
+  geom_bar(position = position_fill(reverse = TRUE)) +
+  coord_flip() +
+  theme(legend.position = "top")
+```
