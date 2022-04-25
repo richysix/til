@@ -1,0 +1,31 @@
+---
+title: "Using symbols in ggplot graphs"
+author: "Richard White"
+date: "07/10/2021"
+output:
+  md_document:
+    variant: markdown_github
+---
+
+```{r load_data, include = FALSE, echo = TRUE}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+To add text containing symbols to plots, use `expression`.  
+Greek letters can be used by including the name of the symbol (For example alpha, delta, omega etc.)
+
+Use `~` to join symbols with a space.  
+Use `*` to join symbols without a space.
+
+For more details type `?plotmath` at the R console.
+
+```{r add_symbols_to_legend, warning=FALSE}
+ggplot(data = penguins) + 
+  geom_point(aes(x = body_mass_g, y = flipper_length_mm, colour = species)) + 
+  scale_colour_brewer(type = "qual", palette = "Dark2", 
+                      labels = c(expression("Adelie"~mu*"m"), 
+                                 expression("Chinstrap"~log[10]), 
+                                 expression(Gentoo^2))) + 
+  theme(legend.text.align = 0)
+```
