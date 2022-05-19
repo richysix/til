@@ -9,10 +9,11 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Commmand Line
 
 -   [Start ssh-agent](command_line/start-ssh-agent.md)
--   [Copy only certain files from multiple directories (rsync)](command_line/rsync-include-exclude.md)
+-   [Tag arbitrary commits](command_line/tag-commits.md)
 
 ## Git
 
+-   [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
 -   [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
 
 ## Python
