@@ -24,6 +24,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 
 -   [Create a stacked bar chart of proportion](R/stack_bar_prop.md)
 -   [Using symbols in plots](R/symbols.md)
+-   [text in ggplot2](R/ggplot2_text.md)
 
 ## Vagrant
 
