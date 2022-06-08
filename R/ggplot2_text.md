@@ -22,3 +22,18 @@ ggplot(data = letters_data, aes(x = xpos, y = ypos)) +
 ```
 
 ![](ggplot2_text_files/figure-markdown_github/letter_plot-1.png)
+
+The default size for text is 3.88, which is approximately 11.04 in
+points.
+
+``` r
+sprintf('Default text size = %.2f', GeomLabel$default_aes$size)
+```
+
+    ## [1] "Default text size = 3.88"
+
+``` r
+sprintf('Default text size in points = %.2f', GeomLabel$default_aes$size * .pt)
+```
+
+    ## [1] "Default text size in points = 11.04"

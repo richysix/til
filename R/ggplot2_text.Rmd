@@ -25,3 +25,11 @@ ggplot(data = letters_data, aes(x = xpos, y = ypos)) +
   geom_text(aes(label = letter), size = letters_data$size_points / .pt) +
   theme(axis.text.x = element_text(size = 16))
 ```
+
+The default size for text is `r GeomLabel$default_aes$size`, which is approximately `r sprintf('%.2f', GeomLabel$default_aes$size * .pt)` in points.
+
+```{r default_text_size}
+sprintf('Default text size = %.2f', GeomLabel$default_aes$size)
+
+sprintf('Default text size in points = %.2f', GeomLabel$default_aes$size * .pt)
+```
