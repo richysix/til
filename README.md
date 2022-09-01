@@ -26,6 +26,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Using symbols in plots](R/symbols.md)
 -   [text in ggplot2](R/ggplot2_text.md)
 -   [reverse order of discrete axis](R/ggplot2_rev_discrete_limits.md)
+-   [order levels of factor by the value of the y-axis at the end of the x-axis](ggplot2_order_by_final_y_value.Rmd)
 
 ## Vagrant
 
