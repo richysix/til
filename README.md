@@ -31,3 +31,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Vagrant
 
 -   [Teardown a Vagrant Environment](vagrant/teardown.md)
+
+## Excel
+
+-   [Calculate a daily/monthly interest rate with compounding from APR](excel/interest.md)
