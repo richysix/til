@@ -14,7 +14,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Git
 
 -   [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
--   [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
+-   [Add a tag to a specific commit](git/tag-commits.md)
 
 ## Python
 
@@ -26,8 +26,9 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Using symbols in plots](R/symbols.md)
 -   [text in ggplot2](R/ggplot2_text.md)
 -   [reverse order of discrete axis](R/ggplot2_rev_discrete_limits.md)
--   [order levels of factor by the value of the y-axis at the end of the x-axis](ggplot2_order_by_final_y_value.Rmd)
--   [render Rmarkdown document to multiple formats with a different name to the default](render_with_new_names.Rmd)
+-   [order levels of factor by the value of the y-axis at the end of the x-axis](R/ggplot2_order_by_final_y_value.md)
+-   [render Rmarkdown document to multiple formats with a different name to the default](R/render_with_new_names.md)
+-   [Split and Combine pdf files using `pdftools`](R/pdftools.md)
 
 ## Vagrant
 
