@@ -9,7 +9,6 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Commmand Line
 
 -   [Start ssh-agent](command_line/start-ssh-agent.md)
--   [Tag arbitrary commits](command_line/tag-commits.md)
 
 ## Git
 
