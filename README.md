@@ -25,6 +25,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 
 ### General
 -   [Sequences](R/seqs.Rmd)
+-   [Split and Combine pdf files using `pdftools`](R/pdftools.md)
 
 ### `ggplot2`
 
@@ -33,7 +34,6 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [text in ggplot2](R/ggplot2_text.md)
 -   [reverse order of discrete axis](R/ggplot2_rev_discrete_limits.md)
 -   [order levels of factor by the value of the y-axis at the end of the x-axis](R/ggplot2_order_by_final_y_value.md)
--   [Split and Combine pdf files using `pdftools`](R/pdftools.md)
 
 ### Rmarkdown
 
