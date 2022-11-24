@@ -1,0 +1,36 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+# Sequences
+
+`seq_len()` can be used to get a vector of indices as long as the number provided  
+e.g.
+
+```{r seq-len}
+seq_len(5)
+
+vec_length <- 7
+seq_len(vec_length)
+```
+
+Rather than working out the length of a vector with `length()` and passing that to `seq_len()`, you can use `seq_along()` and directly provide the vector.  
+e.g.
+```{r seq-along}
+seq_along(letters[1:13])
+```
+
+It can also be used with a list, where you get a vector as long as the number of items in the list.
+```{r seq-along-list}
+seq_along(vector(mode = 'list', length = 7L))
+```
+
+For a data.frame you get a vector as long as the number of columns.
+
+```{r df}
+library('palmerpenguins')
+ncol(penguins)
+seq_along(penguins)
+```
