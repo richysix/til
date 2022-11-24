@@ -23,13 +23,21 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 
 ## R
 
+### General
+-   [Sequences](R/seqs.Rmd)
+
+### `ggplot2`
+
 -   [Create a stacked bar chart of proportion](R/stack_bar_prop.md)
 -   [Using symbols in plots](R/symbols.md)
 -   [text in ggplot2](R/ggplot2_text.md)
 -   [reverse order of discrete axis](R/ggplot2_rev_discrete_limits.md)
 -   [order levels of factor by the value of the y-axis at the end of the x-axis](R/ggplot2_order_by_final_y_value.md)
--   [render Rmarkdown document to multiple formats with a different name to the default](R/render_with_new_names.md)
 -   [Split and Combine pdf files using `pdftools`](R/pdftools.md)
+
+### Rmarkdown
+
+-   [render Rmarkdown document to multiple formats with a different name to the default](R/render_with_new_names.md)
 
 ## Vagrant
 
