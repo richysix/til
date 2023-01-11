@@ -20,6 +20,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Python
 
 -   [Run a simple Python web server](python/http-server.md)
+-   [Provide default values for argparse arguments](python/argparse-default-values.md)
 -   [Basic unit testing](python/unit-testing-python.md)
 
 ## R
