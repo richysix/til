@@ -39,6 +39,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ### Rmarkdown
 
 -   [render Rmarkdown document to multiple formats with a different name to the default](R/render_with_new_names.md)
+-   [Remove comment characters from Rmarkdown output](R/rmd-remove-coment-char.md)
 
 ## Vagrant
 
