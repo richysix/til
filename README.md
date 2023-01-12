@@ -23,6 +23,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Provide default values for argparse arguments](python/argparse-default-values.md)
 -   [Basic unit testing](python/unit-testing-python.md)
 -   [Using Mock objects](python/unit-testing-mock.md)
+-   [Using patch with Mock objects](python/unit-testing-patch.md)
 
 ## R
 
