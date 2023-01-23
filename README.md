@@ -16,6 +16,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Add a tag to a specific commit](git/tag-commits.md)
 -   [List all the files being tracked in a repository](git/list-tracked-files.md)
 -   [Remove a file completely from a repository](git/git-filter-repo.md)
+-   [Find out when a file was added to a repository](git/when-file-added.md)
 
 
 ## Python
