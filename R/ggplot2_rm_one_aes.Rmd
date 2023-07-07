@@ -1,0 +1,38 @@
+---
+title: "Remove legend for one aesthetic"
+author: "Richard White"
+date: "2023-07-07"
+output:
+  md_document:
+    variant: markdown_github
+---
+
+```{r load_packages, message = FALSE}
+library('tidyverse')
+library('palmerpenguins')
+```
+
+If you have 2 aesthetics for a single geom, `ggplot2` will produce a legend for both of them.  
+e.g.  
+
+```{r initial_plot, warning=FALSE}
+ggplot(data = penguins) + 
+  geom_point(aes(x = body_mass_g, y = flipper_length_mm, colour = species, shape = island), 
+             size = 2)
+```
+
+The legend can removed entirely using `show.legend = FALSE` in the call to `geom_`.
+```{r rm_legend, warning=FALSE}
+ggplot(data = penguins) + 
+  geom_point(aes(x = body_mass_g, y = flipper_length_mm, colour = species, shape = island), 
+             size = 2, show.legend = FALSE)
+```
+
+However, if you only want to remove the legend for one aesthetic, you can use `guide = "none"` in the appropriate `scale_` function.
+
+```{r rm_one_aes, warning=FALSE}
+ggplot(data = penguins) + 
+  geom_point(aes(x = body_mass_g, y = flipper_length_mm, colour = species, shape = island), 
+             size = 2) +
+  scale_shape_discrete(guide = "none")
+```
