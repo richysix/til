@@ -9,6 +9,8 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Commmand Line
 
 -   [Start ssh-agent](command_line/start-ssh-agent.md)
+-   [Copying certain files and directories recursively](command_line/rsync-include-exclude.md)
+-   [Convert inkscape svg to pdf](command_line/inkscape-svg-to-pdf.md)
 
 ## Git
 
