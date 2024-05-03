@@ -1,0 +1,68 @@
+---
+title: "Testing Flask Applications that use Flask-WTForms"
+date: today
+date-format: iso
+engine: knitr
+format: gfm
+---
+
+```{bash}
+#| label: notes
+#| eval: false
+#| echo: false
+# For the app and test to run,
+# Flask, Flask-WTForms and pytest need to be installed
+pyenv shell 3.12.0
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install flask flask-wtf pytest
+```
+
+Flask WTForms have a `validate_on_submit` method that checks whether a form has been submitted and whether is passes validation. It also implements CSRF protection. This means that when testing a POST request, `validate_on_submit` returns False. To avoid this, WTF_CSRF_ENABLED needs to be set to False in the test config.
+
+For example, if we have an app like this:
+```{bash}
+#| label: app
+#| echo: false
+cat app.py
+```
+
+which has 2 templates (see below), one with a simple form with just a submit button and one
+which is redirected to when the form is submitted. This uses `validate_on_submit`
+to test if the request is a POST one and if the form validates.
+
+The two templates look like this
+
+`input.html`
+```{bash}
+#| label: template1
+#| echo: false
+cat templates/input.html
+```
+
+`output.html`
+```{bash}
+#| label: template2
+#| echo: false
+cat templates/output.html
+```
+
+If we try and test this as below, we get the `input.html` template in the 
+response to both GET and POST requests. This is because CRSF protection is 
+enabled by default and that stops the test POST request from validating.
+
+```{bash}
+#| label: test1
+#| echo: false
+cat flask-test-csrf.py
+```
+
+In order to test this properly, we need to set `WTF_CSRF_ENABLED` to False 
+in the app config.
+
+```{bash}
+#| label: test2
+#| echo: false
+cat flask-test-form.py
+```

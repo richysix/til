@@ -28,6 +28,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Basic unit testing](python/unit-testing-python.md)
 -   [Using Mock objects](python/unit-testing-mock.md)
 -   [Using patch with Mock objects](python/unit-testing-patch.md)
+-   [Testing Flask Applications that use Flask-WTForms](python/testing-flask-wtforms/testing-flask-wtforms.md)
 -   [Create secure random numbers](python/crypt-secret.md)
 
 ## R

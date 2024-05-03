@@ -1,0 +1,14 @@
+<!doctype html>
+<html class="no-js" lang="en-gb">
+<head>
+  <meta charset="utf-8">
+  <title>Testing Flask WTForms</title>
+</head>
+<body>
+<h1>Test Page with form</h1>
+<form action="{{ url_for('index') }}" method="post" novalidate>
+    {{ form.hidden_tag() }}
+<p>{{ form.submit() }}</p>
+</form>
+</body>
+</html>
