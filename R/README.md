@@ -3,6 +3,7 @@
 ## General
 -   [Sequences](seqs.Rmd)
 -   [Split and Combine pdf files using `pdftools`](pdftools.md)
+-   [Using `tryCatch`](tryCatch.md)
 
 ## `ggplot2`
 

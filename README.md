@@ -37,6 +37,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ### General
 -   [Sequences](R/seqs.Rmd)
 -   [Split and Combine pdf files using `pdftools`](R/pdftools.md)
+-   [Using `tryCatch`](R/tryCatch.md)
 
 ### `ggplot2`
 

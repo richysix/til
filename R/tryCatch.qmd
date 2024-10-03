@@ -1,0 +1,188 @@
+---
+title: "Catching messages, warnings and errors"
+format: gfm
+editor: source
+---
+
+Using `tryCatch` to deal with messages, warnings and errors.
+
+This is a function which generates messages, warning and errors with different 
+messages.
+
+```{r}
+#| label: generate_messages_etc
+gen_msgs <- function(x) {
+  switch(
+    x,
+    msg1 = message("This is message 1"),
+    msg2 = message("This is message 2"),
+    msg3 = message("This is message 3"),
+    warn1 = warning("Warning 1!"),
+    warn2 = warning("Warning 2!"),
+    warn3 = warning("Warning 3!"),
+    error1 = stop("Error 1!!"),
+    error2 = stop("Error 2!!"),
+    stop(glue::glue("arg, {x}, not matched!"))
+  )
+}
+```
+
+`try_catch_func` takes an expression and runs `tryCatch` on it.
+This establishes handlers for signalled conditions. The handlers are established
+in order with the first being the most 'recent'.
+If a condition is signalled while evaluating expr then established handlers are 
+checked, starting with the most recently established ones, for one matching the
+class of the condition.
+If a handler is found, any more recent handlers are disestablished, but later 
+ones are not, meaning any conditions raised in the handler may also be caught.
+
+```{r}
+#| label: tryCatch
+#| eval: false
+try_catch_func <- function(expr) {
+  tryCatch(
+    expr,
+    error = function(e) {
+      print(glue::glue("Error condition message is: {conditionMessage(e)}"))
+      cat("Call: ")
+      print(conditionCall(e))
+      # to check the error message, use conditionMessage
+      if (conditionMessage(e) == "Error 1!!") {
+        # output the error message and carry on
+        cat("The error message is ", e$message, "\n")
+        return("Return value") # the return value of the handler function is returned from tryCatch
+      } else {
+        # re-emit the error
+        stop(e)
+      }
+    },
+    warning = function(w) {
+      print(conditionMessage(w))
+      cat("Call: ")
+      print(conditionCall(w))
+      if (w$message == "Warning 1!") {
+        # Be careful using `message`, if a later established message handler
+        # exists it will also be called
+        message(glue::glue("This is a message, not a warning: {w$message}"))
+      } else if (w$message == "Warning 2!") {
+        # suppress the warning
+        cat("Suppress the warning\n")
+        tmp <- suppressWarnings(expr)
+        return(tmp)
+      } else {
+        # re-emit the warning
+        warning(w)
+      }
+    },
+    message = function(m) {
+      print(conditionMessage(m))
+      cat("Call: ")
+      print(conditionCall(m))
+      if (grepl("message 1", m$message)) {
+        # produce a message and carry on
+        message(glue::glue("This is a message, not a warning: {m$message}"))
+        return("Warning 1")
+      } else if (grepl("message 2", m$message)) {
+        # escalate to a warning
+        warning(m)
+        return("Warning 2")
+      } else {
+        return("Message")
+      }
+    }
+  )
+}
+```
+
+```{r}
+#| label: tryCatch_hidden
+#| echo: false
+try_catch_func <- function(expr) {
+  tryCatch(
+    expr,
+    error = function(e) {
+      print(glue::glue("Error condition message is: {conditionMessage(e)}"))
+      cat("Call: ")
+      print(conditionCall(e))
+      # to check the error message, use conditionMessage
+      if (conditionMessage(e) == "Error 1!!") {
+        # output the error message and carry on
+        cat("The error message is ", e$message, "\n")
+        return("Return value") # the return value of the handler function is returned from tryCatch
+      } else {
+        # mimic re-emiting the error
+        cat('Error in gen_msgs("error2") : Error 2!!')
+      }
+    },
+    warning = function(w) {
+      print(conditionMessage(w))
+      cat("Call: ")
+      print(conditionCall(w))
+      if (w$message == "Warning 1!") {
+        # Be careful using `message`, if a later established message handler
+        # exists it will also be called
+        message(glue::glue("This is a message, not a warning: {w$message}"))
+      } else if (w$message == "Warning 2!") {
+        # suppress the warning
+        cat("Suppress the warning\n")
+        tmp <- suppressWarnings(expr)
+        return(tmp)
+      } else {
+        # re-emit the warning
+        warning(w)
+      }
+    },
+    message = function(m) {
+      print(conditionMessage(m))
+      cat("Call: ")
+      print(conditionCall(m))
+      if (grepl("message 1", m$message)) {
+        # produce a message and carry on
+        message(glue::glue("This is a message, not a warning: {m$message}"))
+        return("Message 1")
+      } else if (grepl("message 2", m$message)) {
+        # escalate to a warning
+        warning(conditionMessage(m), call. = FALSE)
+        return("Message 2")
+      } else {
+        return("Message 3")
+      }
+    }
+  )
+}
+```
+
+In order to decide what to do with a condition, one can check the message with
+`conditionMessage`. This is shown in th error handler above which outputs a 
+message in response to error 1 and re-raises the error in response to error 2.
+
+```{r}
+#| label: errors
+try_catch_func(gen_msgs("error1"))
+try_catch_func(gen_msgs("error2"))
+```
+
+With the warnings below, the first warning demonstrates the order of handlers. 
+The message handler is still established as it is specified after the warning
+handler, so when a message is raised within the handler, the message handler is
+also called.
+The second warning suppresses the warning and returns the value and the third 
+warning, re-raises the warning.
+
+```{r}
+#| label: warnings
+try_catch_func(gen_msgs("warn1"))
+try_catch_func(gen_msgs("warn2"))
+try_catch_func(gen_msgs("warn3"))
+```
+
+Since the message handler is specified last, none of the other handlers are 
+established. Message 1 produces a modified message, 2 emits a warning and 3 
+suppresses the message and returns a value.
+
+```{r}
+#| label: messages
+try_catch_func(gen_msgs("msg1"))
+try_catch_func(gen_msgs("msg2"))
+try_catch_func(gen_msgs("msg3"))
+```
