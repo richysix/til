@@ -42,8 +42,8 @@ build_obj$layout$panel_params[[1]]$x.range
 build_obj$layout$panel_params[[1]]$y.range
 ```
 
-This allows you to make sure that manually added annotations are within the plot
-area for example.
+This allows you to make sure that manually added annotations don't artificially
+extend the axes, for example.
 
 You _could_ also calculate these ranges in this case, because you know the extent 
 of the data and the default expansion parameters. 
