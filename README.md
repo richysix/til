@@ -47,6 +47,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [reverse order of discrete axis](R/ggplot2_rev_discrete_limits.md)
 -   [order levels of factor by the value of the y-axis at the end of the x-axis](R/ggplot2_order_by_final_y_value.md)
 -   [remove legend for one aesthetic](R/ggplot2_rm_one_aes.md)
+-   [get the axes limits from a ggplot2 object](R/ggplot2-plot-axes-limits.md)
 
 ### Rmarkdown
 
