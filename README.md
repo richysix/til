@@ -38,6 +38,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Sequences](R/seqs.Rmd)
 -   [Split and Combine pdf files using `pdftools`](R/pdftools.md)
 -   [Using `tryCatch`](R/tryCatch.md)
+-   [Installing multiple version of R on MacOS](R/multiple-r-versions.md)
 
 ### `ggplot2`
 
