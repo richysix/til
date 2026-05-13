@@ -33,6 +33,11 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Create secure random numbers](python/crypt-secret.md)
 -   [Create python requirements file](python/requirements.md)
 
+### uv
+
+-   [Using uv](using-uv.md)
+
+
 ## R
 
 ### General
