@@ -32,6 +32,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 -   [Testing Flask Applications that use Flask-WTForms](python/testing-flask-wtforms/testing-flask-wtforms.md)
 -   [Create secure random numbers](python/crypt-secret.md)
 -   [Create python requirements file](python/requirements.md)
+-   [Trace python script execution](python/trace.md)
 
 ### uv
 
