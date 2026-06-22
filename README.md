@@ -16,11 +16,12 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 ## Git
 
 -   [Common git commands](git/common-git-commands.md)
--   [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
--   [Add a tag to a specific commit](git/tag-commits.md)
+-   [Create a tracking branch for a remote branch](git/common-git-commands.md#checkout-a-tracking-branch-from-a-remote-repository)
 -   [List all the files being tracked in a repository](git/common-git-commands.md#list-all-the-files-being-tracked-in-a-repository)
--   [Remove a file completely from a repository](git/git-filter-repo.md)
--   [Find out when a file was added to a repository](git/when-file-added.md)
+-   [Add a tag to a specific commit](git/common-git-commands.md#add-a-tag-to-a-specific-commit)
+-   [Stop tracking a file and remove it from the repository](git/common-git-commands.md#stop-tracking-a-file-and-remove-it-from-the-repository)
+-   [Find out when a file was added to a repository](git/common-git-commands.md#find-out-when-a-file-was-added-to-a-repository)
+-   [Remove a file completely from a repository](git/common-git-commands.md#remove-a-file-completely-from-a-repository)
 
 ## Python
 
