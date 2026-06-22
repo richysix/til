@@ -15,6 +15,7 @@ Inspired by <https://github.com/readme/guides/private-documentation> and <https:
 
 ## Git
 
+-   [Common git commands](git/common-git-commands.md)
 -   [Stop tracking a file and remove it from the repository](git/stop-tracking-file.md)
 -   [Add a tag to a specific commit](git/tag-commits.md)
 -   [List all the files being tracked in a repository](git/list-tracked-files.md)
